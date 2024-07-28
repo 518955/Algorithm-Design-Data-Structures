@@ -16,5 +16,6 @@ public:
     std::string getName() const override;
 };
 
-#endif 
+#endif // HUMAN_H
+
 
