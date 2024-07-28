@@ -11,6 +11,6 @@ public:
     Player* refGame(Player* player1, Player* player2);
 };
 
-#endif // REFEREE_H
+#endif 
 
 
