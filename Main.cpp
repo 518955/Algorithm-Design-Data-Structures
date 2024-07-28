@@ -1,5 +1,3 @@
-// Main Function: Creates instances of Human, Computer, and Referee, simulates the game, and prints the winner.
-
 #include <iostream>
 #include "Human.h"
 #include "Computer.h"

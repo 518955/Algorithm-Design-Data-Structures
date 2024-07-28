@@ -1,5 +1,3 @@
-// Player Class: Defines the interface for both Human and Computer classes.
-
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -13,3 +11,4 @@ public:
 };
 
 #endif 
+

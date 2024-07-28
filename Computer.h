@@ -4,6 +4,7 @@
 #define COMPUTER_H
 
 #include "Player.h"
+#include <string>
 
 class Computer : public Player {
 public:
@@ -12,3 +13,4 @@ public:
 };
 
 #endif 
+
