@@ -10,5 +10,6 @@ public:
     virtual ~Player() {}  // Virtual destructor
 };
 
-#endif 
+#endif // PLAYER_H
+
 
