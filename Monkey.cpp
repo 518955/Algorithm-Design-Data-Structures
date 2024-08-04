@@ -5,9 +5,5 @@
 #include "Zombie.h"
 
 bool Monkey::beats(const Move* other) const {
-    if (dynamic_cast<const Robot*>(other) != nullptr) return false;
-    if (dynamic_cast<const Pirate*>(other) != nullptr) return true;
-    if (dynamic_cast<const Ninja*>(other) != nullptr) return true;
-    if (dynamic_cast<const Zombie*>(other) != nullptr) return true;
-    return false;
+    return dynamic_cast<const Robot*>(other) || dynamic_cast<const Zombie*>(other);
 }

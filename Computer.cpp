@@ -5,9 +5,8 @@
 #include "Ninja.h"
 #include "Zombie.h"
 
-Computer::Computer(const std::string& name) 
+Computer::Computer(const std::string& name)
     : name(name), rng(std::random_device{}()), dist(0, 4) {
-    // Initialize moves
     moves.push_back(std::make_unique<Monkey>());
     moves.push_back(std::make_unique<Robot>());
     moves.push_back(std::make_unique<Pirate>());
@@ -16,14 +15,12 @@ Computer::Computer(const std::string& name)
 }
 
 Move* Computer::makeMove() const {
-    std::size_t index = dist(rng);  // Get a random index
-    return moves[index].get();      // Return the move at the index
+    std::size_t index = dist(rng);
+    return moves[index].get();
 }
 
 std::string Computer::getName() const {
     return name;
 }
 
-Computer::~Computer() noexcept {
-    // Default destructor implementation, if needed
-}
+Computer::~Computer() noexcept = default;

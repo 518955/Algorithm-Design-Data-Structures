@@ -5,8 +5,7 @@
 
 class Referee {
 public:
-    Referee();
-    Player* refGame(Player* player1, Player* player2);
+    Player* refGame(Player* p1, Player* p2);
 };
 
 #endif // REFEREE_H
