@@ -2,6 +2,8 @@
 #define COMPUTER_H
 
 #include "Player.h"
+#include "Move.h"
+#include <string>
 #include <vector>
 #include <memory>
 #include <random>
@@ -20,3 +22,4 @@ private:
 };
 
 #endif // COMPUTER_H
+

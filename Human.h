@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include "Move.h"
+#include <string>
 
 class Human : public Player {
 public:
@@ -15,3 +16,4 @@ private:
 };
 
 #endif // HUMAN_H
+
