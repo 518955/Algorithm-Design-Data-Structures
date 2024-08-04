@@ -1,10 +1,14 @@
 #include "Human.h"
+#include "MoveFactory.h"
+#include <iostream>
 
-Human::Human(const std::string& name, Move* move) 
-    : name(name), move(move) {}
+Human::Human(const std::string& name) : name(name) {}
 
-Move* Human::makeMove() const {
-    return move;
+Move* Human::makeMove() {
+    std::string moveName;
+    std::cout << "Enter Move: ";
+    std::cin >> moveName;
+    return MoveFactory::createMove(moveName);
 }
 
 std::string Human::getName() const {

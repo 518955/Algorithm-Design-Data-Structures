@@ -6,10 +6,12 @@
 
 class Player {
 public:
-    virtual ~Player() = default;
-    virtual Move* makeMove() const = 0;
+    virtual Move* makeMove() = 0;
     virtual std::string getName() const = 0;
+    virtual ~Player() {}
 };
 
 #endif // PLAYER_H
+
+
 

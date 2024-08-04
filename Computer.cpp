@@ -1,26 +1,19 @@
 #include "Computer.h"
-#include "Monkey.h"
-#include "Robot.h"
-#include "Pirate.h"
-#include "Ninja.h"
-#include "Zombie.h"
+#include "MoveFactory.h"
+#include <cstdlib>
+#include <ctime>
+#include <vector>
 
-Computer::Computer(const std::string& name)
-    : name(name), rng(std::random_device{}()), dist(0, 4) {
-    moves.push_back(std::make_unique<Monkey>());
-    moves.push_back(std::make_unique<Robot>());
-    moves.push_back(std::make_unique<Pirate>());
-    moves.push_back(std::make_unique<Ninja>());
-    moves.push_back(std::make_unique<Zombie>());
+Computer::Computer(const std::string& name) : name(name) {
+    std::srand(std::time(nullptr)); // Seed for random number generator
 }
 
-Move* Computer::makeMove() const {
-    std::size_t index = dist(rng);
-    return moves[index].get();
+Move* Computer::makeMove() {
+    std::vector<std::string> moves = {"Rock", "Paper", "Scissors", "Robot", "Monkey", "Pirate", "Ninja", "Zombie"};
+    int randomIndex = std::rand() % moves.size();
+    return MoveFactory::createMove(moves[randomIndex]);
 }
 
 std::string Computer::getName() const {
     return name;
 }
-
-Computer::~Computer() noexcept = default;
