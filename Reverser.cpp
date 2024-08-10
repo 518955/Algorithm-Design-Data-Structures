@@ -19,3 +19,13 @@ int Reverser::reverseDigit(int value) {
         return lastDigit * numDigits + reversedRemaining;
     }
 }
+
+std::string Reverser::reverseString(std::string characters) {
+    if (characters.empty()) {
+        return "ERROR"; // Invalid input
+    } else if (characters.length() == 1) {
+        return characters;
+    } else {
+        return reverseString(characters.substr(1)) + characters[0];
+    }
+}
